@@ -1,4 +1,11 @@
 <script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const handleLogin = () => {
+  router.push('/home')
+}
 </script>
 
 <template>
@@ -75,10 +82,10 @@
                   <a href="#">Olvidé mi contraseña</a>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary w-100 mb-3">
+              <button type="submit" class="btn btn-primary w-100 mb-3" @click="handleLogin">
                 Iniciar sesión
               </button>
-              <button type="button" class="btn btn-outline-primary w-100">
+              <button type="button" class="btn btn-outline-primary w-100" @click="handleLogin">
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_119_584)">
                     <rect width="16" height="16" transform="translate(0 0.25)" fill="white" fill-opacity="0.01"/>

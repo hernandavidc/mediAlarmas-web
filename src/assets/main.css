@@ -2,6 +2,9 @@
 .text-secondary{
   color: #6C757D;
 }
+.fs-20{
+  font-size: 20px;
+}
 .mt-100{
   margin-top: 100px;
 }
