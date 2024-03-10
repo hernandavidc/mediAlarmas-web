@@ -1,13 +1,8 @@
 @import './base.css';
-.text-secondary{
-  color: #6C757D;
-}
+.text-secondary{ color: #6C757D; }
 .fs-20{ font-size: 20px; }
 .fs-28{ font-size: 28px; }
 .fs-32{ font-size: 32px; }
-.mt-100{
-  margin-top: 100px;
-}
-.w-360{
-  max-width: 360px;
-}
+.mt-100{ margin-top: 100px; }
+.w-360{ max-width: 360px; }
+.clickable{ cursor: pointer; }

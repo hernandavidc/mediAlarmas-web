@@ -3,21 +3,34 @@
     <table class="table table-bordered mb-4">
       <thead>
         <tr>
-          <th class="align-middle">#</th>
-          <th class="align-middle">Perfil</th>
-          <th class="text-center align-middle">Medicamentos</th>
-          <th class="text-center align-middle">Proximos vencimientos</th>
-          <th></th>
+          <th class="align-middle">Medicamento</th>
+          <th class="align-middle">Fecha</th>
+          <th class="align-middle">Cantidades</th>
+          <th class="align-middle">Total</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(user, index) in currentPageUsers" :key="user.id">
-          <td class="align-middle">{{ index + 1 }}</td>
-          <td class="align-middle">{{ user.name }}</td>
-          <td class="text-center align-middle">{{ user.cantMedicines }}</td>
-          <td class="text-center align-middle">{{ user.porxExpirations }}</td>
-          <td class="text-center">
-            <button class="btn btn-primary">Ver alarmas</button>
+        <tr v-for="(purchase, index) in currentPagePurchases" :key="index">
+          <td class="align-middle">{{ purchase.medicine }}</td>
+          <td class="align-middle">{{ purchase.date }}</td>
+          <td class="text-center align-middle">{{ purchase.cant }}</td>
+          <td class="text-center align-middle">{{ purchase.total }}</td>
+          <td class="">
+            <span class="clickable me-2">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="4" fill="#E9ECEF"/>
+                <path d="M25.1574 5.3335C24.4346 5.3335 23.7266 5.61375 23.1809 6.1595L13.8293 15.4816L13.6228 15.6881L13.5638 15.9831L12.9148 19.2871L12.6198 20.6736L14.0063 20.3786L17.3103 19.7296L17.6053 19.6706L17.8118 19.4641L27.1339 10.1125C28.2217 9.02471 28.2217 7.24732 27.1339 6.1595C26.5882 5.61375 25.8802 5.3335 25.1574 5.3335ZM25.1574 7.16251C25.3786 7.16251 25.5962 7.27682 25.8064 7.48701C26.2268 7.90739 26.2268 8.36464 25.8064 8.78502L16.6613 17.9301L15.0388 18.2546L15.3633 16.6321L24.5084 7.48701C24.7186 7.27682 24.9361 7.16251 25.1574 7.16251ZM5.33325 9.08002V27.9602H24.2134V15.5111L22.3254 17.3991V26.0721H7.22127V10.968H15.8943L17.7823 9.08002H5.33325Z" fill="#717171"/>
+              </svg>
+            </span>
+            <span class="clickable">
+              <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="34" height="34" rx="7" fill="#E9ECEF"/>
+                <rect x="1" y="1" width="34" height="34" rx="7" stroke="white" stroke-width="2"/>
+                <rect x="21.7742" y="12" width="1" height="11" transform="rotate(44.6909 21.7742 12)" fill="#C33E2E"/>
+                <rect x="14.7034" y="12.0381" width="11" height="1" transform="rotate(44.6909 14.7034 12.0381)" fill="#C33E2E"/>
+              </svg>
+            </span>
           </td>
         </tr>
       </tbody>
@@ -52,7 +65,7 @@
 <script>
 export default {
   props: {
-    users: {
+    purchases: {
       type: Array,
       required: true,
     },
@@ -68,12 +81,12 @@ export default {
   },
   computed: {
     totalPages() {
-      return Math.ceil(this.users.length / this.perPage);
+      return Math.ceil(this.purchases.length / this.perPage);
     },
-    currentPageUsers() {
+    currentPagePurchases() {
       const start = (this.currentPage - 1) * this.perPage;
       const end = start + this.perPage;
-      return this.users.slice(start, end);
+      return this.purchases.slice(start, end);
     },
   },
 };

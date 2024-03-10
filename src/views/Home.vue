@@ -3,11 +3,19 @@ import { ref } from 'vue'
 
 import Layout from '@/components/Layout.vue'; 
 import TableProfiles from '@/components/TableProfiles.vue';
+import TablePurchases from '@/components/TablePurchases.vue';
+import Actions from '@/components/Actions.vue';
 
 const profiles = ref([{
   name: 'Pepito Perez',
   cantMedicines: '3',
   porxExpirations: '1'
+}])
+const purchases = ref([{
+  medicine: "Neosaldina 300 mg",
+  date: "10/02/2024",
+  cant: "10",
+  total: "$85.000",
 }])
 </script>
 
@@ -41,9 +49,29 @@ const profiles = ref([{
           :perPage="6"
         />
       </div>
+      <div class="row">
+        <h1 class=" mb-4 fs-28 fw-semibold mt-3"
+          style="text-wrap: nowrap;"
+        >Compras <span class="expiration">( 1 Medicamento proximo a vencimiento )</span></h1>
+        <TablePurchases 
+          :purchases="purchases"
+          :perPage="6"
+        />
+      </div>
+      <Actions>
+        <button class="btn btn-primary fw-semibold">Agregar perfil</button>
+        <button class="btn btn-primary fw-semibold">Crear alarma</button>
+        <button class="btn btn-primary fw-semibold">Agregar dispositivo</button>
+        <button class="btn btn-primary fw-semibold">Agregar compra</button>
+      </Actions>
     </div>
   </Layout>
 </template>
 
 <style>
+.expiration{
+  font-size: 14px;
+  color: #152536;
+  font-weight: 400;
+}
 </style>
