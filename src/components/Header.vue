@@ -13,7 +13,7 @@
               <router-link class="nav-link" active-class="active" to="/home">Inicio</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" active-class="active" to="/">Medicamentos</router-link>
+              <router-link class="nav-link" active-class="active" to="/medicamentos">Medicamentos</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/">Cerrar sesión</router-link>
