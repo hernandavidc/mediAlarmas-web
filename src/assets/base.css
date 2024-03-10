@@ -1,6 +1,18 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+:root {
+  --blue: #007bff;
+  --primary: #7749F8;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: 'Roboto', sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 body, h1, h2, h3 {
   font-family: 'Roboto', sans-serif;
   color: #212529;
