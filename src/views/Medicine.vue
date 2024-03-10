@@ -3,15 +3,24 @@ import { ref } from 'vue'
 
 import Layout from '@/components/Layout.vue'; 
 import Actions from '@/components/Actions.vue';
+import TableMedicine from '@/components/TableMedicine.vue';
 
-
+const medicines = ref([{
+  name: 'Neosaldina 300 mg',
+  expire: '0',
+  cant: '30',
+  comment: 'Tomar sin liquido',
+}])
 </script>
 
 <template>
   <Layout class="home">
     <div class="container mt-5">
       <div class="row">
-        <h1 class="mb-4 fs-28 fw-semibold position-relative">Medicamentos</h1>
+        <h1 class="mb-4 fs-40 fw-semibold position-relative text-center">
+          <router-link class="btn btn-outline-info fw-semibold fs-20 py-1 position-absolute top-50 start-0 ms-3 translate-middle-y" to="/home">< Volver</router-link>
+          Medicamentos
+        </h1>
         <div class="d-flex mb-4">
           <div class="input-group mb-3">
             <span class="input-group-text bg-white">
@@ -27,11 +36,11 @@ import Actions from '@/components/Actions.vue';
                 </defs>
               </svg>
             </span>
-            <input type="text" class="form-control" placeholder="Busca por nombre del perfil" aria-label="Busca por nombre del perfil">
+            <input type="text" class="form-control" placeholder="Busca por nombre del medicamento" aria-label="Busca por nombre del medicamento">
           </div>
         </div>
-        <TableProfiles 
-          :users="profiles"
+        <TableMedicine 
+          :medicines="medicines"
           :perPage="6"
         />
       </div>
@@ -41,10 +50,11 @@ import Actions from '@/components/Actions.vue';
   </Layout>
 </template>
 
-<style>
-.expiration{
-  font-size: 14px;
-  color: #152536;
-  font-weight: 400;
+<style scoped>
+h1{
+  color: #343A40;
+}
+.btn-outline-info:hover{
+  color: white;
 }
 </style>

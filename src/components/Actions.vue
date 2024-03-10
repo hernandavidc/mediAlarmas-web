@@ -12,7 +12,6 @@ export default {
       this.rotation = this.isOpen
         ? "rotate(45deg)"
         : "rotate(0deg)";
-      this.updateFillColor();
     },
   },
 };
