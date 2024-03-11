@@ -82,7 +82,7 @@ const handleLogin = () => {
                   <a href="#">Olvidé mi contraseña</a>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary w-100 mb-3" @click="handleLogin">
+              <button class="btn btn-primary w-100 mb-3" @click="handleLogin">
                 Iniciar sesión
               </button>
               <button type="button" class="btn btn-outline-primary w-100" @click="handleLogin">
